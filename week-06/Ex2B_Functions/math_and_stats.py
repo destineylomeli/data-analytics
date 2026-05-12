@@ -1,0 +1,40 @@
+import random
+import math
+import statistics
+
+vals_1_100 = range(1, 100)
+vals_sample = random.sample(vals_1_100, 75)
+vals_choices = random.choices(vals_1_100, k=200)
+radius = random.randint(3, 10)
+pi = math.pi
+
+# Sample calculations
+sample_sum = sum(vals_sample)
+sample_avg = statistics.mean(vals_sample)
+sample_median = statistics.median(vals_sample)
+
+# 200 values calculations
+choices_avg = statistics.mean(vals_choices)
+choices_median = statistics.median(vals_choices)
+choices_mode = statistics.mode(vals_choices)
+choices_stdev = statistics.stdev(vals_choices)
+choices_variance = statistics.variance(vals_choices)
+
+# Circle calculations
+area = pi * (radius ** 2)
+
+print(f"_Experimenting with a subset of integers 1-100:")
+print(f"Sum of 75 samples values from 1 to 100: {sample_sum}")
+print(f"Average of 75 sample values: {sample_avg}")
+print(f"Median of 75 sample value: {sample_median}")
+
+print("\n_Experimenting with a superset of 200 values, integers 1-100:")
+print(f"Average of 200 values: {choices_avg}")
+print(f"Median of 200 valuesL {choices_median}")
+print(f"Mode of 200 values: {choices_mode}")
+print(f"Standard deviation of 200 values: {choices_stdev}")
+print(f"Variance of 200 values: {choices_variance}")
+
+print("\n_Modeling a random circle:")
+print(f"Radius = {radius}, area = {math.ceil(area)} (rounded up)")
+print(f"Radius = {radius}, area = {math.floor(area)} (rounded down)")
